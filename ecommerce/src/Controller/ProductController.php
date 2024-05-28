@@ -75,15 +75,21 @@ class ProductController extends AbstractController
 
         return $this->redirectToRoute('admin_product_list');
     }
+    
     /**
      * @Route("/products", name="product_list")
      */
-    public function list(EntityManagerInterface $entityManager)
+    public function list(Request $request, EntityManagerInterface $entityManager)
     {
-        $products = $entityManager->getRepository(Product::class)->findAll();
+        $search = $request->query->get('search', '');
+        $category = $request->query->get('category', '');
+
+        $products = $entityManager->getRepository(Product::class)->findBySearchAndCategory($search, $category);
+        $categories = $entityManager->getRepository(Category::class)->findAll();
 
         return $this->render('product/list.html.twig', [
             'products' => $products,
+            'categories' => $categories,
         ]);
     }
 
