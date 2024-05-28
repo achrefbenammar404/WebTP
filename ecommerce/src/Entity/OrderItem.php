@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Entity;
+namespace ecommerce\src\Entity;
 
 use App\Repository\OrderItemRepository;
 use Doctrine\ORM\Mapping as ORM;

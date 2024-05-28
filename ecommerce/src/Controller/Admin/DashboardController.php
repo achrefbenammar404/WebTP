@@ -1,4 +1,4 @@
-// src/Controller/Admin/DashboardController.php
+// ecommerce/src/Controller/Admin/DashboardController.php
 namespace App\Controller\Admin;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

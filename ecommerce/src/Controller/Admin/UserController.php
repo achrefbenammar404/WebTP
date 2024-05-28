@@ -1,5 +1,4 @@
- namespace App\Controller\Admin;
-
+namespace ecommerce\Controller\Admin;
 use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
