@@ -1,3 +1,5 @@
+<?php
+
 // ecommerce/src/Controller/UserController.php
 namespace App\Controller;
 
@@ -50,7 +52,7 @@ class UserController extends AbstractController
 
         return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
     }
-}
+
 // src/Controller/UserController.php
 /**
  * @Route("/profile", name="app_profile")
@@ -71,4 +73,5 @@ public function profile(Request $request, EntityManagerInterface $entityManager)
     return $this->render('user/profile.html.twig', [
         'profileForm' => $form->createView(),
     ]);
+}
 }

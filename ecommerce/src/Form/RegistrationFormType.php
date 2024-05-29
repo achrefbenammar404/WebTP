@@ -1,5 +1,7 @@
+<?php
+
 // src/Form/RegistrationFormType.php
-namespace ecommerce/src/Form;
+namespace ecommerce\src\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;

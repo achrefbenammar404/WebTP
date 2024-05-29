@@ -1,3 +1,5 @@
+<?php
+
 // ecommerce/src/Controller/Admin/ProductController.php
 namespace App\Controller\Admin;
 
@@ -79,7 +81,7 @@ class ProductController extends AbstractController
     /**
      * @Route("/products", name="product_list")
      */
-    public function list(Request $request, EntityManagerInterface $entityManager)
+    public function filter(Request $request, EntityManagerInterface $entityManager)
     {
         $search = $request->query->get('search', '');
         $category = $request->query->get('category', '');

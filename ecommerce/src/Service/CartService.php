@@ -1,3 +1,5 @@
+<?php
+
 // src/Service/CartService.php
 namespace App\Service;
 

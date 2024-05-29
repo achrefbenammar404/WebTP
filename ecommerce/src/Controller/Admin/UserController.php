@@ -1,3 +1,5 @@
+<?php
+
 namespace ecommerce\Controller\Admin;
 use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;

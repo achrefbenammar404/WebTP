@@ -71,7 +71,7 @@ class OrderController extends AbstractController
             'order' => $order,
         ]);
     }
-}
+
 // src/Controller/OrderController.php
 /**
  * @Route("/orders", name="order_history")
@@ -83,4 +83,6 @@ public function history(EntityManagerInterface $entityManager)
     return $this->render('order/history.html.twig', [
         'orders' => $orders,
     ]);
+}
+
 }

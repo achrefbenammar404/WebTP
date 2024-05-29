@@ -1,3 +1,5 @@
+<?php
+
 // ecommerce/src/Controller/Admin/DashboardController.php
 namespace App\Controller\Admin;
 

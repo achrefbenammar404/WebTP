@@ -1,3 +1,5 @@
+<?php
+
 // ecommerce/src/Controller/Admin/OrderController.php
 namespace App\Controller\Admin;
 
