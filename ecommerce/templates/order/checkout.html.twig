@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Checkout{% endblock %}
+
+{% block body %}
+<h1>Checkout</h1>
+
+{{ form_start(checkoutForm) }}
+    {{ form_row(checkoutForm.address) }}
+    {{ form_row(checkoutForm.paymentMethod) }}
+    <button type="submit">Place Order</button>
+{{ form_end(checkoutForm) }}
+{% endblock %}

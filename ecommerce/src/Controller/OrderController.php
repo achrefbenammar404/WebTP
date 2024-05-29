@@ -1,17 +1,20 @@
 <?php
-
-// ecommerce/src/Controller/OrderController.php
 namespace App\Controller;
 
 use App\Entity\Order;
 use App\Entity\OrderItem;
+use App\Entity\Product;
 use App\Form\CheckoutFormType;
 use App\Service\CartService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/order")
+ */
 class OrderController extends AbstractController
 {
     private $cartService;
@@ -24,7 +27,7 @@ class OrderController extends AbstractController
     /**
      * @Route("/checkout", name="checkout")
      */
-    public function checkout(Request $request, EntityManagerInterface $entityManager)
+    public function checkout(Request $request, EntityManagerInterface $entityManager): Response
     {
         $order = new Order();
         $form = $this->createForm(CheckoutFormType::class, $order);
@@ -61,9 +64,9 @@ class OrderController extends AbstractController
     }
 
     /**
-     * @Route("/order/confirmation/{id}", name="order_confirmation")
+     * @Route("/confirmation/{id}", name="order_confirmation")
      */
-    public function confirmation($id, EntityManagerInterface $entityManager)
+    public function confirmation($id, EntityManagerInterface $entityManager): Response
     {
         $order = $entityManager->getRepository(Order::class)->find($id);
 
@@ -71,18 +74,4 @@ class OrderController extends AbstractController
             'order' => $order,
         ]);
     }
-
-// src/Controller/OrderController.php
-/**
- * @Route("/orders", name="order_history")
- */
-public function history(EntityManagerInterface $entityManager)
-{
-    $orders = $entityManager->getRepository(Order::class)->findBy(['user' => $this->getUser()]);
-
-    return $this->render('order/history.html.twig', [
-        'orders' => $orders,
-    ]);
-}
-
 }
